@@ -18,7 +18,7 @@ inputs:
     description: "When using with secretsManagerSecretId, specify the field containing the password"
     required: false
   roleArn:
-    description: "Assume the specified IAM role prior before authenticating to the registry"
+    description: "Assume the specified IAM role before authenticating to the registry"
     required: false
 runs:
   using: 'node12'

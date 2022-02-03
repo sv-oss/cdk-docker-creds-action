@@ -7,7 +7,7 @@ Supports ECR authentication (when `ecrRepository` is enabled) or User/Password a
 
 Use multiple times to configure multiple registries.
 
-More info can be found at the [ecr-assets readme](https://www.npmjs.com/package/cdk-assets?activeTab=readme).
+More info can be found at the [cdk-assets readme](https://www.npmjs.com/package/cdk-assets?activeTab=readme).
 
 ## Configuration Options
 | Option Name | Type | Required | Description |
@@ -17,7 +17,7 @@ More info can be found at the [ecr-assets readme](https://www.npmjs.com/package/
 | `secretsManagerSecretId` | string | no | Authenticate to the registry using user/pass credentials from a SecretsManger secret Id or ARN |
 | `secretsUsernameField` | string | no | When using with `secretsManagerSecretId`, specify the field containing the username |
 | `secretsPasswordField` | string | no | When using with `secretsManagerSecretId`, specify the field containing the password |
-| `roleArn` | string | no | Assume the specified IAM role prior before authenticating to the registry |
+| `roleArn` | string | no | Assume the specified IAM role before authenticating to the registry |
 
 
 ## Examples
