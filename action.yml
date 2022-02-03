@@ -1,0 +1,25 @@
+name: 'cdk-docker-creds-action'
+description: 'Github Action to configure cdk-assets for external docker registries'
+author: 'sv-oss'
+inputs:
+  registryHost:
+    required: true
+    description: "Hostname of the docker registry to configure"
+  secretsManagerSecretId:
+    required: false
+    description: 'Authenticate to the registry using user/pass credentials from a SecretsManger secret Id or ARN'
+  ecrRepository:
+    required: false
+    description: "Authenticate to the registry using ECR authentication"
+  secretsUsernameField:
+    description: "When using with secretsManagerSecretId, specify the field containing the username"
+    required: false
+  secretsPasswordField:
+    description: "When using with secretsManagerSecretId, specify the field containing the password"
+    required: false
+  roleArn:
+    description: "Assume the specified IAM role prior before authenticating to the registry"
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
