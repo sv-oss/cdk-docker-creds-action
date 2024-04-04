@@ -23,7 +23,7 @@ const project = new GitHubActionTypeScriptProject({
   autoApproveOptions: {
     label: 'deps-upgrade',
     allowedUsernames: [
-      'app/sv-oss-continuous-delivery',
+      'sv-oss-continuous-delivery[bot]',
     ],
   },
   dependabot: false,
