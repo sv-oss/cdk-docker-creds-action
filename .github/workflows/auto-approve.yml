@@ -16,6 +16,4 @@ jobs:
       pull-requests: write
     if: contains(github.event.pull_request.labels.*.name, 'deps-upgrade') && (github.event.pull_request.user.login == 'app/sv-oss-continuous-delivery')
     steps:
-      - uses: hmarr/auto-approve-action@v2.2.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ github.event.pull_request.user.login }}
