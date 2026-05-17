@@ -3,7 +3,7 @@
 name: cdk-docker-creds-action
 description: Github Action to configure cdk-assets for external docker registries
 runs:
-  using: node20
+  using: node24
   main: dist/index.js
 author: Service Victoria Platform Engineering
 inputs:

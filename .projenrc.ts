@@ -1,4 +1,4 @@
-import { github, javascript } from 'projen';
+import { DependencyType, github, javascript } from 'projen';
 import { GitHubActionTypeScriptProject, RunsUsing } from 'projen-github-action-typescript';
 
 const project = new GitHubActionTypeScriptProject({
@@ -10,7 +10,7 @@ const project = new GitHubActionTypeScriptProject({
   name: 'cdk-docker-creds-action',
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
-  minNodeVersion: '20.12.1',
+  minNodeVersion: '24.15.0',
   depsUpgradeOptions: {
     workflowOptions: {
       projenCredentials: github.GithubCredentials.fromApp({
@@ -35,7 +35,7 @@ const project = new GitHubActionTypeScriptProject({
     author: 'Service Victoria Platform Engineering',
     description: 'Github Action to configure cdk-assets for external docker registries',
     runs: {
-      using: RunsUsing.NODE_20,
+      using: 'node24' as RunsUsing,
       main: 'dist/index.js',
     },
     inputs: {
@@ -83,5 +83,10 @@ project.release?.addJobs({
     ],
   },
 });
+
+project.deps.removeDependency('@vercel/ncc', DependencyType.BUILD);
+project.deps.addDependency('rolldown@^1.0.1', DependencyType.BUILD);
+project.packageTask.reset('rolldown -c');
+
 
 project.synth();
