@@ -36,7 +36,7 @@
     "projen": "^0.99.62",
     "projen-github-action-typescript": "^0.0.514",
     "rolldown": "^1.0.1",
-    "ts-jest": "^29.4.9",
+    "ts-jest": "^29.4.10",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   },
